@@ -1,0 +1,265 @@
+So now we're gonna combine all this together.
+We're gonna read some data.
+We're gonna read a file.
+We're gonna make some dictionaries.
+We're gonna make some lists and
+we're gonna use all these things to build a real program.
+So what the real program is gonna solve, and so
+let's see if you can solve this right?
+Read this text really quick, like in a 100th of a second or so and
+figure out what the most common word is and how many of these things there are.
+It's kind of like the problem we showed you before,
+except I was showing you names.
+So figure it out.
+What is the most common word and how many are there?
+Or maybe let's just skip to the next slide, cuz humans are so bad at this.
+I mean, and humans are looking at this and saying, no, I refuse to do this.
+As compared to the other ones who actually tried, no, we're not even going to try.
+It's like dude, how about we just write some Python code to solve this problem.
+I know how this turns out.
+We've seen this story before.
+Okay, so here is the basic pattern.
+We're going to use a dictionary.
+We're gonna use split.
+Split gives us a back a list and then we're gonna loop through the list and
+then we're gonna do the histogram pattern so we can go through the list.
+So this program which we'll soon switch to reading the whole file, but
+for now we're just gonna read a single line.
+Then we just write another loop outside this loop.
+So here's what we do.
+We start out, we make a dictionary.
+We read a line of text.
+Type, type, type, type,
+type, line of text goes into this variable line, then we split it.
+All right, and then we get back a list of words.
+We're gonna print those words out, and then what we're
+doing is whatever that line was, we're gonna loop through the words.
+[SOUND] Word, word, word, word,whatever it is, word,
+whatever is on that line, and then we're going to update the count.
+So this is that little idiom.
+We're gonna grab the old value of our count for
+the particular word we're looking at, or 0, add 1 to it and stick it back in.
+So this is both gonna do the new and the existing.
+So that's the basic program.
+We're doing exactly what we did before, except now we are taking a line from
+input and we are making the list of words by using the split function.
+You get the idea now.
+So here we're gonna run this with a bit of code.
+Here's our long line of text.
+I have to break it so it fits on my screen.
+The clown ran after the car and the car ran into the tent the the the the.
+So that gets put into the variable, then it splits it.
+And this is the word, so this is just taking this line of text and
+breaking it based on spaces.
+And then we get a list of 15, 20 or so words.
+Then we write the loop that loops through each one of these things and
+makes a little histogram for every word.
+The, clown, ran, then it's after,
+and then the gets another one cuz we hit the the.
+And then the car gets another one.
+And we see these things, and these grow up.
+And that's what we're doing down here when there's no output.
+We could put output there but it wouldn't fit on my screen.
+And then at the very end, we're gonna print all these counts out.
+Okay?
+And then we can look and see, the thing with the highest histogram is the,
+is the one with the highest histogram.
+So that's how that code ultimately runs, right?
+So if we look through it again, we make a dictionary.
+We take this line of text then we put it into this variable,
+then we split it, split it into words.
+And then we have this word that goes iteration across this,
+the words in the line.
+And then we do the counting trick, and
+then at the end, we print all these things out.
+And we can see the largest one, okay?
+So that's a common pattern in text processing, looking for words.
+Now let's talk a little bit more about some of the capabilities of dictionaries.
+We've used for loops to go through strings.
+We've used for loops to go through files.
+We used for loops to go through lists.
+And now we're gonna use a for loop to go through a dictionary.
+Again, for, some iteration variable, in some collection.
+And what you do here is not because I named it key, key is a great name for it.
+But key is gonna take on successive value of the keys, not the values, okay?
+It's not gonna go through the values.
+In the list, it goes through the values, but
+in a dictionary it goes through the keys.
+So it's gonna print out jan, chuck, and fred.
+Remember, order doesn't matter.
+I mean, order is unpredictable inside of dictionaries.
+Now, if I actually want to get this values,
+then I just say counts(key), right?
+And so key is, whatever, jan, chuck, and fred, and so this is counts sub jan,
+counts sub chuck, and counts sub fred.
+And so that's how we go through the key-value pairs in a very,
+very simple for loop.
+Just remember, if you just put the name of a dictionary here, the loop is gonna go
+through the keys in the dictionary, not the values in the dictionary.
+But you can get every value, just say counts(key), or
+whatever the dictionary name is sub key.
+And so, what you can do here is you can kinda see what's going on.
+Is we can actually tell Python, what were doing right here is we're
+telling Python to convert this dictionary variable to a list.
+So, lists have less information and that ends up giving the keys, right?
+And so, this is a list that doesn't have keys and values, it just has the keys.
+And so that's what happens when you do that.
+And you can either say, make a list based on the contents of this dictionary, or
+you can say, take this dictionary and give me the keys.
+This is a keys method within dictionaries.
+And it gives us the same thing, which is a list of the keys, list of keys.
+Right?
+Now, if we want the values, we can ask of that too.
+We have a method inside that's called values, jjj.values.
+And that says, give me a list of the values, and that gives me the values.
+It pulls out the values 1, 42, and 100.
+Of course, the order is not the order we put them in but
+it turns out that the values do correspond in order to the keys.
+So whatever the value of the key-value pairs are in the dictionary,
+if you ask for the keys and you ask for the values and
+moment later, they come out in corresponding order.
+So jan maps to 100, chuck maps to 1, and fred maps to 42.
+Even though the order is not the same as the order that you originally put them in.
+One thing that we'll talk about in the next is what we call tuples.
+But there is another method called items that gives us back
+a list of key-value pairs, which is different than the dictionary itself.
+And it is a list, so if you look at this as a list.
+These little guys with parentheses are called tuples, which is the next chapter.
+But you see we see that jan maps to 100, chuck maps to 1, fred maps to 42.
+This outer thing is a three-item list, but
+each item itself is a data structure called a tuple.
+But we'll talk about that in a short period of time.
+This whole items thing can be used, with a [COUGH] for
+loop to loop to through simultaneously the key-value pairs.
+And so items give us back keys and values.
+But when you write this for loop, and
+this is a really cool Python thing, you can put two iteration variables.
+No other language that I know of has ability to
+do more than one iteration variable.
+So what happens here is we've given it two iteration variables and
+AAA goes through the keys and BBB goes through this simultaneously, the values.
+So as one is bouncing, the other one is bouncing, too.
+So it is basically saying, I usually call this K and this V to mean key and
+value, but I'm using non pneumonic variables so I don't confuse you.
+And basically that just means that we're gonna through
+all the key-value pairs, right?
+This was the key.
+This is the value.
+And we're gonna run this loop three times, cuz there's three things in
+the dictionary, and we're gonna hit each of the key-value pairs.
+And so it prints out jan 100, chuck 1, 42.
+So this is a very succinct and convenient way to go through a dictionary and
+see all the key-value pairs and not have to manage any of the stuff manually.
+I usually name this K and V, or key and
+value, because that keeps it straight in my mind.
+The key is the fist iteration variable and
+the value is the second iteration variable.
+Okay, with that,
+we can actually now circle all the way back to chapter one.
+Remember I told you that you would understand
+every line of this at some point and this is the moment.
+This is the moment that you are going to understand every single line.
+And if you've been doing your homework and the work up to now, and
+you sort of understand the lecture we just got done doing.
+You should understand every single line.
+And it's not all that hard, like, what, ten weeks later or
+whatever it is or ten days later.
+Okay, so let's start at the beginning.
+Heck, it's easy.
+You're an expert now.
+You know a lot of Python.
+You know 9.5 chapters of Python.
+So what do we do first?
+We put out a prompt, so it puts out a prompt.
+We get a filename, words.txt ends up in name.
+We open it, we get a file handle, right?
+We're gonna make a count, a dictionary, a histogram pattern.
+So we're gonna create an empty dictionary.
+We're gonna have this line variable that's gonna
+iterate through all the lines in the file.
+[SOUND] So this is gonna run once for every line in the file.
+We actually don't have to do the strip, because the split kinda does the strip for
+us automatically.
+It ignores spaces at the end.
+It only does and so we don't really have to do a strip.
+You could do a strip here, but it wouldn't hurt.
+You think of this file as like word, word, word, word, word.
+A second line word, word, word, word, word, word, word.
+But this outer for loop is going through line for line.
+And then we do the split, which gives us each of these words.
+And now we have an inner for loop,
+and that's gonna go through each of the words in the file, right?
+So this is word in words.
+This is still one line.
+So we're gonna go through the words, and
+we're gonna say count (word) = counts.get (word).
+This is that idiom.
+Go back to that part.
+I won't explain that, that just makes the histogram.
+Makes the histogram right?
+And we're going to end up accumulating these counts over the entire file.
+So this is two loops.
+We're going to each line and
+we're going through the words in the line, and then we go to the next line.
+And then we go through the words in the line, next line.
+And then we're making a histogram as we go, little histograms building up for
+the different words and the histogram is extending.
+At this point in the code, inside counts,
+we have a complete histogram of every word on every line of that file.
+And now all we have to do is figure out what the largest one was.
+And this takes us back to a couple chapters ago, where we're looking for
+the largest.
+Okay, you can't use the max function here,
+because it's all sort of hidden inside this dictionary.
+So what we're gonna do is we've got this histogram in counts.
+It's the words, word, word, word, and then the little things counted up, right?
+So we're gonna look through here and we're gonna look for the tallest one.
+And then we're gonna remember both what the count was and what the word is.
+And so we're gonna make a variable called, the biggest count that we've seen so far.
+And the word that is associated with that biggest count, so
+I'll call my variables, bigcount and bigword.
+And so now I'm gonna have iteration go through the items,
+which is the key-value pairs.
+So the word variable is gonna go through all the keys, and
+the count is gonna go through all the values, the numbers.
+And we're doing a maximum loop.
+And if the bigcount is none, which means we're on the first word.
+Or the count we're looking at for the particular item we're looking at, four,
+is bigger than the previous one, one.
+If it's the first one or if count is greater than the biggest count,
+then remember it.
+This is kind of the remember.
+We're gonna remember what the word was that we had,
+where we saw the biggest number.
+We're remembering the word and we're gonna remember the count.
+And then we'll do this a bunch of times and if we find later, much later,
+something that's got a little higher number, like eight or
+something, then we will fix that as well, okay?
+And so, this runs all the way through all the things.
+And when it comes out, bigword and
+bigcount the residual at the end of the loop.
+The residual stuff at the end of the loop will be the largest word and
+how many times.
+And so all that magic is happening sort of from here [SOUND] to here.
+That magic happens and in words.txt we see that the word to is the most common,
+it's seen 16 times.
+And in the clown text that we've been playing with, the word the happens and
+it's 7 times, and that's the magic.
+So this is a slide that if you don't understand every
+single character, every single.
+Why is the word none, what did the word none mean?
+It's time to go back and check, right?
+This is a time to review.
+This is the time to understand what we're talking about,
+because we're just gonna get crazier from here.
+And this is really important basics cuz
+this is a complete program that does something non trivial.
+Okay, so remember this slide.
+Okay?
+So we have talked about dictionaries.
+We compared them to lists.
+We've shown how to use the get operation.
+We've looped through files.
+We took a look at tuples.
+Tuples is what we're gonna talk about next then we're gonna sneak peek,
+we'll talk about sorting dictionaries, coming up next.
